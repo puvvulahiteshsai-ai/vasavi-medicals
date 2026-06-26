@@ -1,0 +1,22 @@
+/* ══════════════ QUICK BAR ══════════════ */
+.qbar { background: var(--blue); }
+.qbar__list { display: flex; align-items: stretch; min-height: 72px; }
+.qbar__item {
+  display: flex; align-items: center; gap: 13px;
+  flex: 1; padding: 16px var(--pad); color: #fff; min-width: 0;
+}
+.qbar__item i { font-size: 1.1rem; color: rgba(255,255,255,.6); flex-shrink: 0; }
+.qbar__item strong { display: block; font-size: .88rem; font-weight: 700; line-height: 1.3; }
+.qbar__item strong a { color: #fff; }
+.qbar__item strong a:hover { text-decoration: underline; }
+.qbar__item span { display: block; font-size: .72rem; color: rgba(255,255,255,.62); margin-top: 2px; }
+.qbar__sep { width: 1px; background: rgba(255,255,255,.15); align-self: stretch; flex-shrink: 0; }
+@media (min-width: 769px) {
+  .qbar__item strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+@media (max-width: 768px) {
+  .qbar__list { flex-direction: column; min-height: auto; }
+  .qbar__sep  { width: 100%; height: 1px; align-self: auto; }
+  .qbar__item { padding: 14px var(--pad); }
+}

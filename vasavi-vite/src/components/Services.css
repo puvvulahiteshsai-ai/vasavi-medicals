@@ -1,0 +1,75 @@
+/* ══════════════ SERVICES ══════════════ */
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.svc-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px; box-shadow: var(--sh-xs);
+  transition: transform .22s var(--ease), box-shadow .22s, border-color .22s;
+  position: relative; overflow: hidden;
+}
+.svc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--ic, var(--blue));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .28s var(--ease);
+}
+.svc-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); border-color: #D5E6F5; }
+.svc-card:hover::before { transform: scaleX(1); }
+.svc-card__icon {
+  width: 48px; height: 48px; border-radius: 11px;
+  background: var(--ib, var(--blue-tint)); color: var(--ic, var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; margin-bottom: 16px;
+  transition: transform .22s var(--ease);
+}
+.svc-card:hover .svc-card__icon { transform: scale(1.06); }
+.svc-card h3 { font-size: .92rem; font-weight: 800; color: var(--text-900); margin-bottom: 8px; }
+.svc-card p  { font-size: .855rem; color: var(--text-400); line-height: 1.68; }
+
+/* Specifics for Services 3D Flip */
+.svc-card.flip-card {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}
+.svc-card.flip-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+.svc-card.flip-card .flip-card-front {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  box-shadow: var(--sh-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow .22s, border-color .22s;
+}
+.svc-card.flip-card:hover .flip-card-front {
+  box-shadow: var(--sh-md);
+  border-color: #D5E6F5;
+}
+.svc-card.flip-card .flip-card-back {
+  background: var(--blue-tint);
+  border: 1px solid var(--blue);
+  padding: 28px 24px;
+  box-shadow: var(--sh-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .svc-grid      { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 768px) {
+  .svc-grid { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .svc-grid   { grid-template-columns: 1fr; }
+}

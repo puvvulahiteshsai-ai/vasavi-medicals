@@ -1,0 +1,99 @@
+/* ══════════════ AMBULANCE ANIMATION ══════════════ */
+.delivery-anim-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 850;
+  overflow: hidden;
+}
+
+.delivery-anim-track {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: driveAcross 24s linear infinite;
+  will-change: transform;
+}
+
+.delivery-vehicle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delivery-vehicle svg {
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+  animation: flipSvg 24s linear infinite;
+  will-change: transform;
+}
+
+.delivery-text {
+  background: var(--blue);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  margin-top: -2px;
+  box-shadow: 0 4px 10px rgba(27,94,171,0.3);
+  white-space: nowrap;
+}
+
+/* Wheels animation */
+.ambulance-wheels circle {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: spinWheels 0.5s linear infinite;
+}
+
+/* Speed lines animation */
+.speed-lines line {
+  animation: windBlow 0.4s linear infinite alternate;
+}
+.line1 { animation-delay: 0s; }
+.line2 { animation-delay: 0.1s; }
+.line3 { animation-delay: 0.2s; }
+
+/* Siren light pulse */
+.siren-light {
+  animation: sirenPulse 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes spinWheels {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes windBlow {
+  0% { stroke-dasharray: 2 4; stroke-dashoffset: 0; opacity: 0.5; }
+  100% { stroke-dasharray: 6 4; stroke-dashoffset: -10; opacity: 1; }
+}
+
+@keyframes sirenPulse {
+  0% { fill: #E53935; filter: drop-shadow(0 0 2px rgba(229, 57, 53, 0.5)); }
+  100% { fill: #FF8A80; filter: drop-shadow(0 0 12px rgba(229, 57, 53, 0.9)); }
+}
+
+/* Driving here and there */
+@keyframes driveAcross {
+  0%   { transform: translateX(-150px); }
+  45%  { transform: translateX(calc(100vw + 50px)); }
+  50%  { transform: translateX(calc(100vw + 50px)); }
+  95%  { transform: translateX(-150px); }
+  100% { transform: translateX(-150px); }
+}
+
+@keyframes flipSvg {
+  0%   { transform: scaleX(1); }
+  45%  { transform: scaleX(1); }
+  46%  { transform: scaleX(-1); }
+  95%  { transform: scaleX(-1); }
+  96%  { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}

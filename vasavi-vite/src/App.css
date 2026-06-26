@@ -1,0 +1,22 @@
+/* ══════════════ FLOATING BUTTONS ══════════════ */
+.wa-float {
+  position: fixed; right: var(--wa-r); bottom: var(--wa-bot);
+  width: var(--wa-sz); height: var(--wa-sz); border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,.22); z-index: 9999;
+  transition: transform .2s var(--ease), box-shadow .2s;
+}
+.wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,.28); }
+.back-top {
+  position: fixed; right: var(--bt-r); bottom: var(--bt-bot); z-index: 800;
+  width: var(--bt-sz); height: var(--bt-sz); border-radius: 50%;
+  background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; box-shadow: var(--sh-md);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .22s, visibility .22s, transform .22s, background .18s;
+}
+.back-top.visible  { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-top:hover    { background: var(--blue-dark); transform: translateY(-3px); }
