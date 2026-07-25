@@ -8,10 +8,6 @@ Official website for **Sri Vasavi Medical Hall**, a pharmacy located in Habsigud
 
 Sri Vasavi Medical Hall is a full-service pharmacy established in 2000, serving the Habsiguda community for over 25 years. This website was designed and developed to help the business reach more customers, showcase their services, and make it easy for patients to find and contact the pharmacy.
 
-**Live Website:**  
-https://vasavi-medicals.vercel.app/
-
-Or as a clickable hyperlink:
 
 **Live Website:** [https://vasavi-medicals.vercel.app/](https://vasavi-medicals.vercel.app/)
 
