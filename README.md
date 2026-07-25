@@ -6,7 +6,7 @@ Project Overview
 
 Sri Vasavi Medical Hall is a full-service pharmacy established in 2000, serving the Habsiguda community for over 25 years. This website was designed and developed to help the business reach more customers, showcase their services, and make it easy for patients to find and contact the pharmacy.
 
-The website is live and deployed at: https://vasavi-medical-hall.vercel.app
+The website is live and deployed at: vasavi-medicals.vercel.app
 
 Team
 
